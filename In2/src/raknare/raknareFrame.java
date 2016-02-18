@@ -463,6 +463,12 @@ String operator;
         else if ("Add".equals(operator)) {
             answer = num1 + num2;
         }
+        else if ("Divide".equals(operator)) {
+            answer = num1 / num2;
+        }
+        else if ("Mult".equals(operator)) {
+            answer = num1 * num2;
+        }
         
         return answer;
     }
