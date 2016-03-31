@@ -21,6 +21,7 @@ boolean reset = true;
 
 double num1;
 double num2;
+boolean Continue = false;
 
 String operator;
     /**
@@ -50,6 +51,10 @@ String operator;
         btnMult = new javax.swing.JButton();
         btnEq = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
+        btnMemClear = new javax.swing.JButton();
+        btnMemAdd = new javax.swing.JButton();
+        btnMemSub = new javax.swing.JButton();
+        btnMemRec = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -175,6 +180,34 @@ String operator;
             }
         });
 
+        btnMemClear.setText("MC");
+        btnMemClear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMemClearActionPerformed(evt);
+            }
+        });
+
+        btnMemAdd.setText("M+");
+        btnMemAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMemAddActionPerformed(evt);
+            }
+        });
+
+        btnMemSub.setText("M-");
+        btnMemSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMemSubActionPerformed(evt);
+            }
+        });
+
+        btnMemRec.setText("MR");
+        btnMemRec.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMemRecActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -215,42 +248,56 @@ String operator;
                             .addComponent(btnMult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnEq, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                            .addComponent(btnEq, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
                             .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(116, 116, 116))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMemClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMemAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMemSub, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMemRec, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(taldisplaytxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn7)
-                    .addComponent(btn8)
-                    .addComponent(btn9)
-                    .addComponent(btnSub)
-                    .addComponent(btnReset))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn4)
-                    .addComponent(btn5)
-                    .addComponent(btn6)
-                    .addComponent(btnAdd))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnMemSub)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnMemRec))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(taldisplaytxf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn1)
-                            .addComponent(btn2)
-                            .addComponent(btn3)
-                            .addComponent(btnDiv))
+                            .addComponent(btn7)
+                            .addComponent(btn8)
+                            .addComponent(btn9)
+                            .addComponent(btnSub)
+                            .addComponent(btnReset)
+                            .addComponent(btnMemClear))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btn0)
-                            .addComponent(dotbtn)
-                            .addComponent(btnMult)))
-                    .addComponent(btnEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btn4)
+                            .addComponent(btn5)
+                            .addComponent(btn6)
+                            .addComponent(btnAdd)
+                            .addComponent(btnMemAdd))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btn1)
+                                    .addComponent(btn2)
+                                    .addComponent(btn3)
+                                    .addComponent(btnDiv))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(btn0)
+                                    .addComponent(dotbtn)
+                                    .addComponent(btnMult)))
+                            .addComponent(btnEq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(141, Short.MAX_VALUE))
         );
 
@@ -399,6 +446,22 @@ String operator;
         reset = true;
     }//GEN-LAST:event_btnEqActionPerformed
 
+    private void btnMemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemClearActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMemClearActionPerformed
+
+    private void btnMemAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemAddActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMemAddActionPerformed
+
+    private void btnMemSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemSubActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMemSubActionPerformed
+
+    private void btnMemRecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemRecActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMemRecActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -448,6 +511,10 @@ String operator;
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDiv;
     private javax.swing.JButton btnEq;
+    private javax.swing.JButton btnMemAdd;
+    private javax.swing.JButton btnMemClear;
+    private javax.swing.JButton btnMemRec;
+    private javax.swing.JButton btnMemSub;
     private javax.swing.JButton btnMult;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSub;

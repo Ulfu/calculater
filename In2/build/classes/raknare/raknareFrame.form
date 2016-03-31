@@ -67,12 +67,19 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnEq" pref="50" max="32767" attributes="0"/>
+                          <Component id="btnEq" pref="51" max="32767" attributes="0"/>
                           <Component id="btnReset" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnMemClear" max="32767" attributes="0"/>
+                  <Component id="btnMemAdd" max="32767" attributes="0"/>
+                  <Component id="btnMemSub" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnMemRec" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -80,39 +87,50 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="taldisplaytxf" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn7" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn8" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn9" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSub" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn4" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn6" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
+                      <Component id="btnMemSub" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnMemRec" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Component id="taldisplaytxf" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btn3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDiv" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn7" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnSub" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMemClear" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn0" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="dotbtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnMult" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btn6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnMemAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btn1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btn3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnDiv" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="btn0" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="dotbtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnMult" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="btnEq" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <Component id="btnEq" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="141" max="32767" attributes="0"/>
           </Group>
@@ -129,7 +147,7 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="7"/>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Default Cursor"/>
+          <Color id="Standardmark&#xf6;r"/>
         </Property>
       </Properties>
       <Events>
@@ -262,6 +280,38 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMemClear">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="MC"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMemClearActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMemAdd">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M+"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMemAddActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMemSub">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="M-"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMemSubActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnMemRec">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="MR"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMemRecActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
