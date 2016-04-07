@@ -22,6 +22,7 @@ boolean reset = true;
 double num1;
 double num2;
 boolean Continue = false;
+double memory = 0;
 
 String operator;
     /**
@@ -55,6 +56,7 @@ String operator;
         btnMemAdd = new javax.swing.JButton();
         btnMemSub = new javax.swing.JButton();
         btnMemRec = new javax.swing.JButton();
+        btnNegate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -181,6 +183,7 @@ String operator;
         });
 
         btnMemClear.setText("MC");
+        btnMemClear.setEnabled(false);
         btnMemClear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMemClearActionPerformed(evt);
@@ -205,6 +208,13 @@ String operator;
         btnMemRec.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMemRecActionPerformed(evt);
+            }
+        });
+
+        btnNegate.setText("+/-");
+        btnNegate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNegateActionPerformed(evt);
             }
         });
 
@@ -249,7 +259,8 @@ String operator;
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnEq, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                            .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(btnReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnNegate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMemClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -283,7 +294,8 @@ String operator;
                             .addComponent(btn5)
                             .addComponent(btn6)
                             .addComponent(btnAdd)
-                            .addComponent(btnMemAdd))
+                            .addComponent(btnMemAdd)
+                            .addComponent(btnNegate))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -447,20 +459,41 @@ String operator;
     }//GEN-LAST:event_btnEqActionPerformed
 
     private void btnMemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemClearActionPerformed
-        // TODO add your handling code here:
+        memory = 0;
     }//GEN-LAST:event_btnMemClearActionPerformed
 
     private void btnMemAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemAddActionPerformed
-        // TODO add your handling code here:
+        memory += Double.parseDouble(taldisplaytxf.getText());
+        if (memory == 0){
+            btnMemRec.disable();
+            btnMemClear.disable();
+        }
+        else {
+            btnMemRec.enable();
+            btnMemClear.enable();
+        }
     }//GEN-LAST:event_btnMemAddActionPerformed
 
     private void btnMemSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemSubActionPerformed
-        // TODO add your handling code here:
+        memory -= Double.parseDouble(taldisplaytxf.getText());
+        if (memory == 0){
+            btnMemRec.disable();
+            btnMemClear.disable();
+        }
+        else {
+            btnMemRec.enable();            
+            btnMemClear.enable();
+        }
     }//GEN-LAST:event_btnMemSubActionPerformed
 
     private void btnMemRecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemRecActionPerformed
-        // TODO add your handling code here:
+        taldisplaytxf.setText(Double.toString(memory));
     }//GEN-LAST:event_btnMemRecActionPerformed
+
+    private void btnNegateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNegateActionPerformed
+        double negate = Double.parseDouble(taldisplaytxf.getText());
+        taldisplaytxf.setText((Double.toString((-1) * Double.parseDouble(taldisplaytxf.getText()))));
+    }//GEN-LAST:event_btnNegateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -516,6 +549,7 @@ String operator;
     private javax.swing.JButton btnMemRec;
     private javax.swing.JButton btnMemSub;
     private javax.swing.JButton btnMult;
+    private javax.swing.JButton btnNegate;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSub;
     private javax.swing.JButton dotbtn;

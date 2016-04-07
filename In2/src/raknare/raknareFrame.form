@@ -69,6 +69,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnEq" pref="51" max="32767" attributes="0"/>
                           <Component id="btnReset" max="32767" attributes="0"/>
+                          <Component id="btnNegate" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -111,6 +112,7 @@
                           <Component id="btn6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btnMemAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnNegate" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -285,6 +287,7 @@
     <Component class="javax.swing.JButton" name="btnMemClear">
       <Properties>
         <Property name="text" type="java.lang.String" value="MC"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMemClearActionPerformed"/>
@@ -312,6 +315,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMemRecActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnNegate">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="+/-"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNegateActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
