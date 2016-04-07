@@ -477,12 +477,12 @@ String operator;
     private void btnMemSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemSubActionPerformed
         memory -= Double.parseDouble(taldisplaytxf.getText());
         if (memory == 0){
-            btnMemRec.disable();
-            btnMemClear.disable();
+            btnMemRec.setEnabled(false);
+            btnMemClear.setEnabled(false);
         }
         else {
-            btnMemRec.enable();            
-            btnMemClear.enable();
+            btnMemRec.setEnabled(true);            
+            btnMemClear.setEnabled(true);
         }
     }//GEN-LAST:event_btnMemSubActionPerformed
 
