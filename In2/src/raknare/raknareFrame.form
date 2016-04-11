@@ -26,77 +26,72 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="taldisplaytxf" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="btnSquareRoot" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnSquare" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnCubic" pref="50" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnInvert" pref="50" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnFactorial" min="-2" pref="51" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="taldisplaytxf" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="btn0" min="-2" pref="106" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="dotbtn" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="btn1" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btn2" min="-2" pref="50" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="btn3" pref="50" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btn4" min="-2" pref="50" max="-2" attributes="0"/>
-                                          <Component id="btn7" min="-2" pref="50" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="btn5" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
-                                          <Component id="btn8" min="-2" pref="50" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="btn6" pref="50" max="32767" attributes="0"/>
-                                          <Component id="btn9" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                              <Component id="btn0" min="-2" pref="106" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="dotbtn" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="btn1" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btn2" min="-2" pref="50" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btn3" pref="50" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="btn4" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btn7" min="-2" pref="50" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="btn5" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btn8" min="-2" pref="50" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btnSub" max="32767" attributes="0"/>
-                                  <Component id="btnAdd" alignment="0" pref="50" max="32767" attributes="0"/>
-                                  <Component id="btnDiv" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="btnMult" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="btnEq" pref="51" max="32767" attributes="0"/>
-                                  <Component id="btnReset" max="32767" attributes="0"/>
-                                  <Component id="btnNegate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btn6" pref="50" max="32767" attributes="0"/>
+                                  <Component id="btn9" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="btnMemClear" max="32767" attributes="0"/>
-                          <Component id="btnMemAdd" max="32767" attributes="0"/>
-                          <Component id="btnMemSub" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnMemRec" alignment="0" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="btnSub" max="32767" attributes="0"/>
+                          <Component id="btnAdd" alignment="0" pref="50" max="32767" attributes="0"/>
+                          <Component id="btnDiv" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnMult" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="btn10" min="-2" pref="50" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btn11" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btn12" pref="50" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btn13" pref="50" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnNegate1" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="115" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnReset" max="32767" attributes="0"/>
+                          <Component id="btnNegate" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnEq" alignment="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="btnMemClear" max="32767" attributes="0"/>
+                  <Component id="btnMemAdd" max="32767" attributes="0"/>
+                  <Component id="btnMemSub" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnMemRec" alignment="0" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -152,11 +147,11 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btn10" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn11" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn12" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btn13" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnNegate1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSquareRoot" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSquare" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnCubic" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnInvert" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnFactorial" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="112" max="32767" attributes="0"/>
           </Group>
@@ -166,7 +161,7 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="taldisplaytxf">
       <Properties>
-        <Property name="text" type="java.lang.String" value="0.0"/>
+        <Property name="text" type="java.lang.String" value="0"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btn7">
@@ -350,44 +345,44 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNegateActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn10">
+    <Component class="javax.swing.JButton" name="btnSquareRoot">
       <Properties>
-        <Property name="text" type="java.lang.String" value="1"/>
+        <Property name="text" type="java.lang.String" value="&#x221a;x"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn10ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSquareRootActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn11">
+    <Component class="javax.swing.JButton" name="btnSquare">
       <Properties>
         <Property name="text" type="java.lang.String" value="x"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn11ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSquareActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn12">
+    <Component class="javax.swing.JButton" name="btnCubic">
       <Properties>
         <Property name="text" type="java.lang.String" value="3"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn12ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCubicActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btn13">
+    <Component class="javax.swing.JButton" name="btnInvert">
       <Properties>
-        <Property name="text" type="java.lang.String" value="3"/>
+        <Property name="text" type="java.lang.String" value="1/x"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn13ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInvertActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnNegate1">
+    <Component class="javax.swing.JButton" name="btnFactorial">
       <Properties>
-        <Property name="text" type="java.lang.String" value="+/-"/>
+        <Property name="text" type="java.lang.String" value="n!"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNegate1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFactorialActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
