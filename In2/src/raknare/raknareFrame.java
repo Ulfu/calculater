@@ -553,11 +553,13 @@ String operator;
     }//GEN-LAST:event_btnNegateActionPerformed
 
     private void btnSquareRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareRootActionPerformed
-        // TODO add your handling code here:
+        taldisplaytxf.setText(Double.toString(Math.sqrt(Double.parseDouble(taldisplaytxf.getText()))));
     }//GEN-LAST:event_btnSquareRootActionPerformed
 
     private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
-        // TODO add your handling code here:
+        double tal = Double.parseDouble(taldisplaytxf.getText());
+        tal *= tal;
+        taldisplaytxf.setText(Double.toString(tal));
     }//GEN-LAST:event_btnSquareActionPerformed
 
     private void btnCubicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCubicActionPerformed
