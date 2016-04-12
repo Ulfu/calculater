@@ -90,6 +90,7 @@
                   <Component id="btnMemAdd" max="32767" attributes="0"/>
                   <Component id="btnMemSub" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnMemRec" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnXY" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
           </Group>
@@ -152,6 +153,7 @@
                   <Component id="btnCubic" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnInvert" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnFactorial" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnXY" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="112" max="32767" attributes="0"/>
           </Group>
@@ -383,6 +385,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFactorialActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnXY">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="y"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXYActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

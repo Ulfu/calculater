@@ -62,6 +62,7 @@ String operator;
         btnCubic = new javax.swing.JButton();
         btnInvert = new javax.swing.JButton();
         btnFactorial = new javax.swing.JButton();
+        btnXY = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -259,6 +260,13 @@ String operator;
             }
         });
 
+        btnXY.setText("y");
+        btnXY.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXYActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -317,7 +325,8 @@ String operator;
                     .addComponent(btnMemClear, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMemAdd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnMemSub, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnMemRec, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnMemRec, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnXY, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
@@ -367,7 +376,8 @@ String operator;
                     .addComponent(btnSquare)
                     .addComponent(btnCubic)
                     .addComponent(btnInvert)
-                    .addComponent(btnFactorial))
+                    .addComponent(btnFactorial)
+                    .addComponent(btnXY))
                 .addContainerGap(112, Short.MAX_VALUE))
         );
 
@@ -578,6 +588,12 @@ String operator;
                 taldisplaytxf.setText(Integer.toString(factorial(Integer.parseInt(taldisplaytxf.getText()))));
     }//GEN-LAST:event_btnFactorialActionPerformed
 
+    private void btnXYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXYActionPerformed
+        num1 = Double.parseDouble(taldisplaytxf.getText());
+        operator = "Exponentiation";
+        reset = true;
+    }//GEN-LAST:event_btnXYActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -640,6 +656,7 @@ String operator;
     private javax.swing.JButton btnSquare;
     private javax.swing.JButton btnSquareRoot;
     private javax.swing.JButton btnSub;
+    private javax.swing.JButton btnXY;
     private javax.swing.JButton dotbtn;
     private javax.swing.JTextField taldisplaytxf;
     // End of variables declaration//GEN-END:variables
@@ -658,7 +675,9 @@ String operator;
         else if ("Mult".equals(operator)) {
             answer = num1 * num2;
         }
-        
+        else if ("Exponentiation".equals(operator)) {
+            answer = xExponentiationY(num1, (int)num2);
+        }
         return answer;
     }
     
@@ -668,5 +687,11 @@ String operator;
         else if (n > 1) n *= factorial(n-1); 
         
         return n;
+    }
+    
+    private double xExponentiationY(double x, int y) {
+        if (y > 1)  x *= xExponentiationY(x, (y-1));
+
+    return x;
     }
 }
