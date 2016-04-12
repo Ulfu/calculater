@@ -608,8 +608,9 @@ String operator;
         this.operator = operator;
         reset = true;
     }
-    private double equals(double num1, double num2, String operator) {
+    private double Calculate(double num1, double num2, String operator) {
         double answer = 0;
+        //Choose a operation.
         if ("Subtract".equals(operator)) {
             answer = num1 - num2;
         }
@@ -623,7 +624,7 @@ String operator;
             answer = num1 * num2;
         }
         else if ("Exponentiation".equals(operator)) {
-            answer = xExponentiationY(num1, (int)num2);
+            answer = xExponentiationY(num1, (int)num2); //Make sure that the exponent is a Integer.
         }
         return answer;
     }
@@ -643,23 +644,23 @@ String operator;
     }
     
     private void numberButton(String number) {
-        if (reset) {
+        if (reset) { //Reset if rhis is the first char in the number.
             taldisplaytxf.setText(number);
-            reset = false;
-            if ("Exponentiation".equals(operator))   decimal = true;
+            reset = false; //Stop reseting. 
+            if ("Exponentiation".equals(operator))   decimal = true; //Do not allow decimal for the exponent
             else    decimal = false;
         }
         else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + number);
+            taldisplaytxf.setText(taldisplaytxf.getText() + number); //Add char to current String in display.
         }
     }
     
     private void executeQuals() {
-        num2 = Double.parseDouble(taldisplaytxf.getText());
-        double answer = equals(num1, num2, operator);
-        taldisplaytxf.setText(Double.toString(answer));
-        num1 = answer;
-        Continue = true;
-        reset = true;
+        num2 = Double.parseDouble(taldisplaytxf.getText()); //Set the second number to current the current number in the display.
+        double answer = Calculate(num1, num2, operator); //Call for calculate function.
+        taldisplaytxf.setText(Double.toString(answer)); // Show answer.
+        num1 = answer;  //Set the answer to the first number for further calculations.
+        Continue = true;    //Tell the program to no longer get the first number from the display.
+        reset = true;   
     }
 }
