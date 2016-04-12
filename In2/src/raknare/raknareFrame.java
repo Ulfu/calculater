@@ -563,11 +563,15 @@ String operator;
     }//GEN-LAST:event_btnSquareActionPerformed
 
     private void btnCubicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCubicActionPerformed
-        // TODO add your handling code here:
+        double tal = Double.parseDouble(taldisplaytxf.getText());
+        tal *= tal * tal;
+        taldisplaytxf.setText(Double.toString(tal));
     }//GEN-LAST:event_btnCubicActionPerformed
 
     private void btnInvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvertActionPerformed
-        // TODO add your handling code here:
+        double tal = Double.parseDouble(taldisplaytxf.getText());
+        tal = 1 / tal;
+        taldisplaytxf.setText(Double.toString(tal));
     }//GEN-LAST:event_btnInvertActionPerformed
 
     private void btnFactorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactorialActionPerformed
