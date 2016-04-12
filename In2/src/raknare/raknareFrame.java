@@ -518,7 +518,7 @@ String operator;
     }//GEN-LAST:event_btnSquareActionPerformed
 
     private void btnCubicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCubicActionPerformed
-        double tal = Double.parseDouble(taldisplaytxf.getText());
+        double tal = getNumDisplay();
         tal *= tal * tal;
         taldisplaytxf.setText(Double.toString(tal));
     }//GEN-LAST:event_btnCubicActionPerformed
@@ -607,7 +607,7 @@ String operator;
     // End of variables declaration//GEN-END:variables
 
     private void setOperator(String operator) {
-        if (Continue == false) num1 = Double.parseDouble(taldisplaytxf.getText());
+        if (Continue == false) num1 = Double.parseDouble(taldisplaytxf.getText()); //Do not overwrite previus value
         this.operator = operator;
         reset = true;
     }
@@ -658,6 +658,10 @@ String operator;
         }
     }
     
+    private double getNumDisplay() {
+        return Double.parseDouble(taldisplaytxf.getText());
+    }
+    
     private void executeQuals() {
         num2 = Double.parseDouble(taldisplaytxf.getText()); //Set the second number to current the current number in the display.
         double answer = Calculate(num1, num2, operator); //Call for calculate function.
@@ -665,5 +669,10 @@ String operator;
         num1 = answer;  //Set the answer to the first number for further calculations.
         Continue = true;    //Tell the program to no longer get the first number from the display.
         reset = true;   
+    }
+    
+    private void extraButtons(String operations) {
+        
+        reset = true;
     }
 }
