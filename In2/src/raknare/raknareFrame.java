@@ -390,7 +390,8 @@ String operator;
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        taldisplaytxf.setText("0.0");
+        taldisplaytxf.setText("0");
+        Continue = false;
         reset = true;
     }//GEN-LAST:event_btnResetActionPerformed
 
@@ -440,35 +441,29 @@ String operator;
     }//GEN-LAST:event_dotbtnActionPerformed
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubActionPerformed
-        num1 = Double.parseDouble(taldisplaytxf.getText());
-        operator = "Subtract";
-        reset = true;
+        setOperator("Subtract");
+        if (Continue == true) executeQuals();
     }//GEN-LAST:event_btnSubActionPerformed
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
-        num1 = Double.parseDouble(taldisplaytxf.getText());
-        operator = "Add";
-        reset = true;
+        setOperator("Add");
+        if (Continue == true) executeQuals();
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDivActionPerformed
-        num1 = Double.parseDouble(taldisplaytxf.getText());
-        operator = "Divide";
-        reset = true;
+        setOperator("Divide");
+        if (Continue == true) executeQuals();
+
     }//GEN-LAST:event_btnDivActionPerformed
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultActionPerformed
-        num1 = Double.parseDouble(taldisplaytxf.getText());
-        operator = "Mult";
-        reset = true;
+        setOperator("Mult");
+        if (Continue == true) executeQuals();
+
     }//GEN-LAST:event_btnMultActionPerformed
 
     private void btnEqActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEqActionPerformed
-        num2 = Double.parseDouble(taldisplaytxf.getText());
-        double answer = equals(num1, num2, operator);
-        taldisplaytxf.setText(Double.toString(answer));
-        num1 = answer;
-        reset = true;
+        executeQuals();
     }//GEN-LAST:event_btnEqActionPerformed
 
     private void btnMemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemClearActionPerformed
@@ -608,6 +603,11 @@ String operator;
     private javax.swing.JTextField taldisplaytxf;
     // End of variables declaration//GEN-END:variables
 
+    private void setOperator(String operator) {
+        if (Continue == false) num1 = Double.parseDouble(taldisplaytxf.getText());
+        this.operator = operator;
+        reset = true;
+    }
     private double equals(double num1, double num2, String operator) {
         double answer = 0;
         if ("Subtract".equals(operator)) {
@@ -652,5 +652,14 @@ String operator;
         else {
             taldisplaytxf.setText(taldisplaytxf.getText() + number);
         }
+    }
+    
+    private void executeQuals() {
+        num2 = Double.parseDouble(taldisplaytxf.getText());
+        double answer = equals(num1, num2, operator);
+        taldisplaytxf.setText(Double.toString(answer));
+        num1 = answer;
+        Continue = true;
+        reset = true;
     }
 }
