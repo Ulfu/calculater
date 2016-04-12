@@ -17,15 +17,15 @@ public class raknareFrame extends javax.swing.JFrame {
     public raknareFrame() {
         initComponents();
     }
-boolean reset = true;
-boolean decimal = false;
+boolean reset = true; //If true replace String in display.
+boolean decimal = false; //True if decimal has been writen.
 
-double num1;
-double num2;
-boolean Continue = false;
+double num1;    //First number
+double num2;    //Second number
+boolean Continue = false; //Tell the program that num1 has not been set yet.
 double memory = 0;
 
-String operator;
+String operator;    //Keep track on the current operator.
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -393,9 +393,13 @@ String operator;
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        //reset values
         taldisplaytxf.setText("0");
         Continue = false;
         reset = true;
+        decimal = false;
+        num1 = 0;
+        num2 = 0;
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
@@ -471,72 +475,56 @@ String operator;
 
     private void btnMemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemClearActionPerformed
         memory = 0;
-        btnMemRec.setEnabled(false);
-        btnMemClear.setEnabled(false);
+        memoryEnable();
     }//GEN-LAST:event_btnMemClearActionPerformed
 
     private void btnMemAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemAddActionPerformed
-        memory += Double.parseDouble(taldisplaytxf.getText());
-        if (memory == 0){
-            btnMemRec.setEnabled(false);
-            btnMemClear.setEnabled(false);
-        }
-        else {
-            btnMemRec.setEnabled(true);            
-            btnMemClear.setEnabled(true);
-        }
+        memory += getNumDisplay();
+        memoryEnable(); //Enable memory buttons if number is stored
     }//GEN-LAST:event_btnMemAddActionPerformed
 
     private void btnMemSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemSubActionPerformed
-        memory -= Double.parseDouble(taldisplaytxf.getText());
-        if (memory == 0){
-            btnMemRec.setEnabled(false);
-            btnMemClear.setEnabled(false);
-        }
-        else {
-            btnMemRec.setEnabled(true);            
-            btnMemClear.setEnabled(true);
-        }
+        memory -= getNumDisplay();
+        memoryEnable();
     }//GEN-LAST:event_btnMemSubActionPerformed
 
     private void btnMemRecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemRecActionPerformed
-        taldisplaytxf.setText(Double.toString(memory));
+        setNumDisplay(memory);
     }//GEN-LAST:event_btnMemRecActionPerformed
 
     private void btnNegateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNegateActionPerformed
-        taldisplaytxf.setText((Double.toString((-1) * Double.parseDouble(taldisplaytxf.getText()))));
+        setNumDisplay((-1) * getNumDisplay());
     }//GEN-LAST:event_btnNegateActionPerformed
 
     private void btnSquareRootActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareRootActionPerformed
-        taldisplaytxf.setText(Double.toString(Math.sqrt(Double.parseDouble(taldisplaytxf.getText()))));
+        setNumDisplay(Math.sqrt(getNumDisplay()));
     }//GEN-LAST:event_btnSquareRootActionPerformed
 
     private void btnSquareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSquareActionPerformed
-        double tal = Double.parseDouble(taldisplaytxf.getText());
-        tal *= tal;
-        taldisplaytxf.setText(Double.toString(tal));
+        double tal = getNumDisplay();
+        tal = Calculate(tal,2,"Exponentiation");
+        setNumDisplay(tal);
     }//GEN-LAST:event_btnSquareActionPerformed
 
     private void btnCubicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCubicActionPerformed
         double tal = getNumDisplay();
-        tal *= tal * tal;
-        taldisplaytxf.setText(Double.toString(tal));
+        tal = Calculate(tal,3,"Exponentiation");
+        setNumDisplay(tal);
     }//GEN-LAST:event_btnCubicActionPerformed
 
     private void btnInvertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvertActionPerformed
-        double tal = Double.parseDouble(taldisplaytxf.getText());
-        tal = 1 / tal;
-        taldisplaytxf.setText(Double.toString(tal));
+        double tal = getNumDisplay();
+        tal = Calculate(1,tal,"Divide");
+        setNumDisplay(tal);
     }//GEN-LAST:event_btnInvertActionPerformed
 
     private void btnFactorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFactorialActionPerformed
-                taldisplaytxf.setText(Integer.toString(factorial(Integer.parseInt(taldisplaytxf.getText()))));
+                setNumDisplay((factorial((int)getNumDisplay())));
     }//GEN-LAST:event_btnFactorialActionPerformed
 
     private void btnXYActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXYActionPerformed
-        num1 = Double.parseDouble(taldisplaytxf.getText());
-        operator = "Exponentiation";
-        reset = true;
+        setOperator("Exponentiation");
+        if (Continue == true) executeQuals();
     }//GEN-LAST:event_btnXYActionPerformed
 
     /**
@@ -607,7 +595,7 @@ String operator;
     // End of variables declaration//GEN-END:variables
 
     private void setOperator(String operator) {
-        if (Continue == false) num1 = Double.parseDouble(taldisplaytxf.getText()); //Do not overwrite previus value
+        if (Continue == false) num1 = getNumDisplay(); //Do not overwrite previus value
         this.operator = operator;
         reset = true;
     }
@@ -632,7 +620,7 @@ String operator;
         return answer;
     }
     
-    private int factorial(int n) {
+    private int factorial(int n) {//Count the factorial
         if (n == 0) n = 1;
         else if (n == 1)    n = 1;
         else if (n > 1) n *= factorial(n-1); 
@@ -661,18 +649,27 @@ String operator;
     private double getNumDisplay() {
         return Double.parseDouble(taldisplaytxf.getText());
     }
+    private void setNumDisplay(double num) {
+        taldisplaytxf.setText(Double.toString(num));
+    }
+    
+    private void memoryEnable() { //Enable or disable memory-rec and -clear
+        if (memory == 0){
+            btnMemRec.setEnabled(false);
+            btnMemClear.setEnabled(false);
+        }
+        else {
+            btnMemRec.setEnabled(true);            
+            btnMemClear.setEnabled(true);
+        }
+    }
     
     private void executeQuals() {
-        num2 = Double.parseDouble(taldisplaytxf.getText()); //Set the second number to current the current number in the display.
+        num2 = getNumDisplay(); //Set the second number to current the current number in the display.
         double answer = Calculate(num1, num2, operator); //Call for calculate function.
-        taldisplaytxf.setText(Double.toString(answer)); // Show answer.
+        setNumDisplay(answer); // Show answer.
         num1 = answer;  //Set the answer to the first number for further calculations.
         Continue = true;    //Tell the program to no longer get the first number from the display.
         reset = true;   
-    }
-    
-    private void extraButtons(String operations) {
-        
-        reset = true;
     }
 }
