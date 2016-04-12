@@ -528,10 +528,12 @@ String operator;
 
     private void btnMemClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemClearActionPerformed
         memory = 0;
+        btnMemRec.setEnabled(false);
+        btnMemClear.setEnabled(false);
     }//GEN-LAST:event_btnMemClearActionPerformed
 
     private void btnMemAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMemAddActionPerformed
-        memory -= Double.parseDouble(taldisplaytxf.getText());
+        memory += Double.parseDouble(taldisplaytxf.getText());
         if (memory == 0){
             btnMemRec.setEnabled(false);
             btnMemClear.setEnabled(false);
