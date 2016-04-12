@@ -18,6 +18,7 @@ public class raknareFrame extends javax.swing.JFrame {
         initComponents();
     }
 boolean reset = true;
+boolean decimal = false;
 
 double num1;
 double num2;
@@ -385,13 +386,7 @@ String operator;
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("7");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 7);
-        }
+        numberButton("7");
     }//GEN-LAST:event_btn7ActionPerformed
 
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
@@ -400,97 +395,47 @@ String operator;
     }//GEN-LAST:event_btnResetActionPerformed
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("8");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 8);
-        }
+        numberButton("8");
     }//GEN-LAST:event_btn8ActionPerformed
 
     private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("9");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 9);
-        }
+        numberButton("9");
     }//GEN-LAST:event_btn9ActionPerformed
 
     private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("4");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 4);
-        }
+        numberButton("4");
     }//GEN-LAST:event_btn4ActionPerformed
 
     private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("5");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 5);
-        }
+        numberButton("5");
     }//GEN-LAST:event_btn5ActionPerformed
 
     private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("6");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 6);
-        }
+        numberButton("6");
     }//GEN-LAST:event_btn6ActionPerformed
 
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("1");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 1);
-        }
+        numberButton("1");
     }//GEN-LAST:event_btn1ActionPerformed
 
     private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("2");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 2);
-        }
+        numberButton("2");
     }//GEN-LAST:event_btn2ActionPerformed
 
     private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("3");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 3);
-        }
+        numberButton("3");
     }//GEN-LAST:event_btn3ActionPerformed
 
     private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
-        if (reset) {
-            taldisplaytxf.setText("0");
-            reset = false;
-        }
-        else {
-            taldisplaytxf.setText(taldisplaytxf.getText() + 0);
-        }
+        numberButton("0");
     }//GEN-LAST:event_btn0ActionPerformed
 
     private void dotbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dotbtnActionPerformed
-        taldisplaytxf.setText(taldisplaytxf.getText() + ".");
+        
+        if (decimal == false) {
+            taldisplaytxf.setText(taldisplaytxf.getText() + ".");
+            decimal = true;
+            }
         
     }//GEN-LAST:event_dotbtnActionPerformed
 
@@ -695,5 +640,17 @@ String operator;
         if (y > 1)  x *= xExponentiationY(x, (y-1));
 
     return x;
+    }
+    
+    private void numberButton(String number) {
+        if (reset) {
+            taldisplaytxf.setText(number);
+            reset = false;
+            if ("Exponentiation".equals(operator))   decimal = true;
+            else    decimal = false;
+        }
+        else {
+            taldisplaytxf.setText(taldisplaytxf.getText() + number);
+        }
     }
 }
