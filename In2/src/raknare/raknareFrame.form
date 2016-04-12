@@ -24,56 +24,59 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="taldisplaytxf" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btnSquareRoot" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnSquare" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnCubic" pref="50" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnInvert" pref="50" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnFactorial" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="btnSquareRoot" min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="btnSquare" pref="75" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCubic" pref="75" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="btnInvert" pref="75" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="btnFactorial" min="-2" pref="75" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="taldisplaytxf" alignment="0" min="-2" pref="261" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="btn0" min="-2" pref="106" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="dotbtn" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="btn1" min="-2" pref="50" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btn2" min="-2" pref="50" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btn3" pref="50" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="btn4" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <Component id="btn7" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btn4" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Component id="btn7" min="-2" pref="75" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="btn5" alignment="1" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <Component id="btn8" min="-2" pref="50" max="-2" attributes="0"/>
+                                  <Component id="btn5" alignment="1" min="-2" pref="75" max="-2" attributes="0"/>
+                                  <Component id="btn8" min="-2" pref="75" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="btn6" pref="50" max="32767" attributes="0"/>
-                                  <Component id="btn9" max="32767" attributes="0"/>
+                                  <Component id="btn6" pref="75" max="32767" attributes="0"/>
+                                  <Component id="btn9" pref="75" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="btn1" min="-2" pref="75" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="btn2" min="-2" pref="75" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="btn0" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="dotbtn" max="32767" attributes="0"/>
+                                  <Component id="btn3" pref="75" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnSub" max="32767" attributes="0"/>
-                          <Component id="btnAdd" alignment="0" pref="50" max="32767" attributes="0"/>
-                          <Component id="btnDiv" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnSub" pref="75" max="32767" attributes="0"/>
+                          <Component id="btnAdd" alignment="0" pref="75" max="32767" attributes="0"/>
+                          <Component id="btnDiv" alignment="0" pref="75" max="32767" attributes="0"/>
                           <Component id="btnMult" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -84,13 +87,13 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="btnMemClear" max="32767" attributes="0"/>
                   <Component id="btnMemAdd" max="32767" attributes="0"/>
                   <Component id="btnMemSub" alignment="0" max="32767" attributes="0"/>
                   <Component id="btnMemRec" alignment="0" max="32767" attributes="0"/>
-                  <Component id="btnXY" alignment="0" max="32767" attributes="0"/>
+                  <Component id="btnXY" alignment="0" pref="75" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
           </Group>
@@ -99,7 +102,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="taldisplaytxf" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
                       <Component id="btnMemSub" min="-2" max="-2" attributes="0"/>
@@ -107,8 +112,6 @@
                       <Component id="btnMemRec" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
-                      <Component id="taldisplaytxf" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btn7" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="btn8" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -146,16 +149,19 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnSquareRoot" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnSquare" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnCubic" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnInvert" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnFactorial" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnXY" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnSquare" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
+                      <Component id="btnCubic" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="btnXY" alignment="1" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="112" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -357,7 +363,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnSquare">
       <Properties>
-        <Property name="text" type="java.lang.String" value="x"/>
+        <Property name="text" type="java.lang.String" value="x^2"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSquareActionPerformed"/>
@@ -365,7 +371,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnCubic">
       <Properties>
-        <Property name="text" type="java.lang.String" value="3"/>
+        <Property name="text" type="java.lang.String" value="x^3"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCubicActionPerformed"/>
@@ -389,7 +395,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnXY">
       <Properties>
-        <Property name="text" type="java.lang.String" value="y"/>
+        <Property name="text" type="java.lang.String" value="x^y"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnXYActionPerformed"/>
