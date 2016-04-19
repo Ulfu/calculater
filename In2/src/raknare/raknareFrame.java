@@ -754,6 +754,7 @@ String operator;    //Keep track on the current operator.
         setNumDisplay(answer); // Show answer.
         num1 = answer;  //Set the answer to the first number for further calculations.
         Continue = false;    //Tell the program to no longer get the first number from the display.
+        counter = 0;
 
 
     }
