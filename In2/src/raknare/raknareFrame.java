@@ -553,7 +553,6 @@ String LastOperator; //Keep track on the last used operator for continous counti
     private void btnSquareRootActionPerformed(java.awt.event.ActionEvent evt) {                                              
         try{
         setNumDisplay(Math.sqrt(getNumDisplay()));
-        Continue = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -567,7 +566,6 @@ String LastOperator; //Keep track on the last used operator for continous counti
             setNumDisplay(tal);
             reset = true;
             num1 = tal;
-            Continue = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -580,7 +578,6 @@ String LastOperator; //Keep track on the last used operator for continous counti
             setNumDisplay(tal);
             reset = true;
             num1 = tal;
-            Continue = true;
         }   
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -593,7 +590,6 @@ String LastOperator; //Keep track on the last used operator for continous counti
             setNumDisplay(tal);
             reset = true;
             num1 = tal;
-            Continue = true;
         }   
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
