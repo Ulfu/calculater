@@ -452,7 +452,9 @@ String operator;    //Keep track on the current operator.
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try{setOperator("Subtract");
-        if (Continue == true || counter > 1) executeQuals();
+        if (Continue == true || counter > 1) {executeQuals();
+                     reset = true;   
+            }
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0); //If empty set display to 0
@@ -461,7 +463,9 @@ String operator;    //Keep track on the current operator.
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try{setOperator("Add");
-        if (Continue == true || counter > 1) executeQuals();
+        if (Continue == true || counter > 1) {executeQuals();
+                     reset = true;   
+            }
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -471,7 +475,9 @@ String operator;    //Keep track on the current operator.
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try{
             setOperator("Divide");
-            if (Continue == true || counter > 1) executeQuals();
+            if (Continue == true || counter > 1) {executeQuals();
+                     reset = true;   
+            }
         }   
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -480,7 +486,9 @@ String operator;    //Keep track on the current operator.
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {                                        
         try {setOperator("Mult");
-        if (Continue == true || counter > 1) executeQuals();
+        if (Continue == true || counter > 1) {executeQuals();
+                     reset = true;   
+            }
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -513,8 +521,8 @@ String operator;    //Keep track on the current operator.
 
     private void btnMemSubActionPerformed(java.awt.event.ActionEvent evt) {                                          
         try {
-        memory -= getNumDisplay();
-        memoryEnable();
+            memory -= getNumDisplay();
+            memoryEnable();
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -745,8 +753,8 @@ String operator;    //Keep track on the current operator.
         double answer = Calculate(num1, num2, operator); //Call for calculate function.
         setNumDisplay(answer); // Show answer.
         num1 = answer;  //Set the answer to the first number for further calculations.
-        Continue = true;    //Tell the program to no longer get the first number from the display.
-        reset = true;   
+        Continue = false;    //Tell the program to no longer get the first number from the display.
+
 
     }
 }
