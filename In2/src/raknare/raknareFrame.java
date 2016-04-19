@@ -20,13 +20,14 @@ public class raknareFrame extends javax.swing.JFrame {
 boolean reset = true; //If true replace String in display.
 boolean decimal = false; //True if decimal has been writen.
 
-int counter = 0; //count calcuted for continous counting
+
 double num1;    //First number
 double num2;    //Second number
 boolean Continue = false; //Tell the program that num1 has not been set yet.
 double memory = 0;
 
 String operator;    //Keep track on the current operator.
+String LastOperator; //Keep track on the last used operator for continous counting.
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -402,7 +403,6 @@ String operator;    //Keep track on the current operator.
         decimal = false;
         num1 = 0;
         num2 = 0;
-        counter = 0;
     }                                        
 
     private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {                                     
@@ -452,9 +452,10 @@ String operator;    //Keep track on the current operator.
 
     private void btnSubActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try{setOperator("Subtract");
-        if (Continue == true || counter > 1) {executeQuals();
+            if (Continue == true) {executeQuals();
                      reset = true;   
             }
+            Continue = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0); //If empty set display to 0
@@ -463,9 +464,10 @@ String operator;    //Keep track on the current operator.
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try{setOperator("Add");
-        if (Continue == true || counter > 1) {executeQuals();
+            if (Continue == true) {executeQuals();
                      reset = true;   
             }
+            Continue = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -475,9 +477,10 @@ String operator;    //Keep track on the current operator.
     private void btnDivActionPerformed(java.awt.event.ActionEvent evt) {                                       
         try{
             setOperator("Divide");
-            if (Continue == true || counter > 1) {executeQuals();
+            if (Continue == true) {executeQuals();
                      reset = true;   
             }
+            Continue = true;
         }   
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -486,9 +489,10 @@ String operator;    //Keep track on the current operator.
 
     private void btnMultActionPerformed(java.awt.event.ActionEvent evt) {                                        
         try {setOperator("Mult");
-        if (Continue == true || counter > 1) {executeQuals();
+            if (Continue == true) {executeQuals();
                      reset = true;   
             }
+            Continue = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -496,9 +500,12 @@ String operator;    //Keep track on the current operator.
     }                                       
 
     private void btnEqActionPerformed(java.awt.event.ActionEvent evt) {                                      
-        try{    
+        try{
+            Continue = false; 
             executeQuals();
+            Continue = false; 
         }
+        
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
         }
@@ -546,6 +553,7 @@ String operator;    //Keep track on the current operator.
     private void btnSquareRootActionPerformed(java.awt.event.ActionEvent evt) {                                              
         try{
         setNumDisplay(Math.sqrt(getNumDisplay()));
+        Continue = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -559,6 +567,7 @@ String operator;    //Keep track on the current operator.
             setNumDisplay(tal);
             reset = true;
             num1 = tal;
+            Continue = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -571,6 +580,7 @@ String operator;    //Keep track on the current operator.
             setNumDisplay(tal);
             reset = true;
             num1 = tal;
+            Continue = true;
         }   
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -583,6 +593,7 @@ String operator;    //Keep track on the current operator.
             setNumDisplay(tal);
             reset = true;
             num1 = tal;
+            Continue = true;
         }   
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -602,7 +613,7 @@ String operator;    //Keep track on the current operator.
 
     private void btnXYActionPerformed(java.awt.event.ActionEvent evt) {                                      
         try {setOperator("Exponentiation");
-            if (Continue == true || counter > 1) executeQuals(); reset = true;
+            if (Continue == true) executeQuals(); reset = true;
         }
         catch (java.lang.NumberFormatException empty){
             setNumDisplay(0);
@@ -676,11 +687,13 @@ String operator;    //Keep track on the current operator.
     private javax.swing.JTextField taldisplaytxf;
     // End of variables declaration                   
 
-    private void setOperator(String operator) {
+    private void setOperator(String operator) {//Tell the program to no longer get the first number from the display.
         if (Continue == false) num1 = getNumDisplay(); //Do not overwrite previus value
+        if (Continue == true) LastOperator = this.operator;
         this.operator = operator;
         reset = true;
-        counter++;
+        
+
     }
     private double Calculate(double num1, double num2, String operator) {
         double answer = 0;
@@ -749,12 +762,14 @@ String operator;    //Keep track on the current operator.
     }
     
     private void executeQuals() {
+        double answer;
         num2 = getNumDisplay(); //Set the second number to current the current number in the display.
-        double answer = Calculate(num1, num2, operator); //Call for calculate function.
+        if (Continue == true)  answer = Calculate(num1, num2, LastOperator); //Call for calculate function.
+        else  answer = Calculate(num1, num2, operator);
         setNumDisplay(answer); // Show answer.
         num1 = answer;  //Set the answer to the first number for further calculations.
-        Continue = false;    //Tell the program to no longer get the first number from the display.
-        counter = 0;
+        Continue = true;
+
 
 
     }
